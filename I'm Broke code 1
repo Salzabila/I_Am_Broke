@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp()); // Menjalankan aplikasi utama
+}
+
+// Kelas utama aplikasi Flutter dengan tema "I Am Broke"
+class MyApp extends StatelessWidget {
+  const MyApp({super.key}); // Konstruktor dengan key opsional
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, // Menghilangkan banner debug
+      home: const BrokeScreen(), // Menampilkan halaman utama aplikasi
+    );
+  }
+}
+
+// Halaman utama aplikasi dengan StatefulWidget
+class BrokeScreen extends StatefulWidget {
+  const BrokeScreen({super.key}); // Konstruktor dengan key opsional
+
+  @override
+  State<BrokeScreen> createState() => _BrokeScreenState(); // Membuat state untuk halaman
+}
+
+class _BrokeScreenState extends State<BrokeScreen> {
+  String saldoText = "Rp 0,00"; // Variabel saldo awal
+
+  // Fungsi untuk mengubah teks ketika tombol ditekan
+  void cekSaldo() {
+    setState(() {
+      saldoText = "Gak usah dicek tetep kosong\nayoo segera menabung dan jangan boros"; // Mengubah teks saldo dengan format center
+    });
+  }
