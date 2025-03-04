@@ -1,0 +1,37 @@
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // AppBar dengan judul aplikasi
+      appBar: AppBar(
+        title: const Text("I'm Broke"), // Menampilkan judul di AppBar
+        backgroundColor: Colors.redAccent, // Warna latar belakang AppBar
+        centerTitle: true, // Menengahkan judul di AppBar
+      ),
+
+      // Body aplikasi
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // Memposisikan konten ke tengah
+          children: [
+            // Menampilkan gambar dompet kosong dari folder assets
+            Image.asset(
+              'assets/broke_student.gif', // gif lokal
+              width: 200, // Lebar gambar
+            ),
+            const SizedBox(height: 20), // Spasi antara gambar dan teks
+
+            // Container untuk teks deskripsi
+            Container(
+              padding: const EdgeInsets.all(16), // Padding di dalam container
+              margin: const EdgeInsets.symmetric(horizontal: 20), // Margin kiri dan kanan
+              decoration: BoxDecoration(
+                color: Colors.red[100], // Warna latar belakang container
+                borderRadius: BorderRadius.circular(15), // Membuat sudut membulat
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12, // Warna bayangan
+                    blurRadius: 6, // Intensitas blur
+                    offset: Offset(0, 3), // Posisi bayangan
+                  ),
+                ],
+              ),
